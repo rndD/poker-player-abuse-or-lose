@@ -1,4 +1,4 @@
-exports = { "tournament_id": "55e4be2d4adaaf0003000002",
+module.exports.simpleFlop = { "tournament_id": "55e4be2d4adaaf0003000002",
   "game_id": "5607b0f1e9958b000300002c",
   "round": 39,
   "players": [
@@ -70,4 +70,4 @@ exports = { "tournament_id": "55e4be2d4adaaf0003000002",
   "in_action": 3,
   "minimum_raise": 40,
   "bet_index": 3
-}
+};

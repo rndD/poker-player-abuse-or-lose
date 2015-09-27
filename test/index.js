@@ -1,16 +1,18 @@
 var sinon = require('sinon');
 var expect = require('chai').expect;
-var player = require('player');
+var player = require('../player.js');
 
 describe('Poker', function () {
-    var gameState1;
+    var simpleFlopGameState;
     beforeEach(function () {
-        gameState1 = require('test/test_data1.js');
+        simpleFlopGameState = require('./test_data1.js').simpleFlop;
     });
 
-    describe('', function () {
-        it('', function () {
-            expect().to.eql([]);
+    describe('bet', function () {
+        it('getMaxBetFromState', function () {
+            var bet = player.getMaxBetFromState(simpleFlopGameState);
+            console.log(bet)
+            expect(bet).to.eql(3);
         });
     });
 });
