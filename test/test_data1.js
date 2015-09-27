@@ -71,3 +71,6 @@ module.exports.simpleFlop = { "tournament_id": "55e4be2d4adaaf0003000002",
   "minimum_raise": 40,
   "bet_index": 3
 };
+
+
+module.exports.simpleFlop2 = {};
