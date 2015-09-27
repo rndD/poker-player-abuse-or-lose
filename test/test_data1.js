@@ -83,3 +83,22 @@ module.exports.simplePairCards = [
           "suit": "clubs"
         }
 ];
+
+module.exports.simpleThreeCards = [
+         {
+           "rank": "4",
+          "suit": "hearts"
+        },
+        {
+           "rank": "4",
+          "suit": "clubs"
+        },
+        {
+            "rank": "4",
+            "suit": "spikes"
+        },
+    {
+        "rank": "6",
+        "suit": "spikes"
+    }
+];

@@ -7,6 +7,7 @@ var vanya2 = require('../vanya2.js')
 describe('Poker', function () {
     var simpleFlopGameState;
     var simplePairCards;
+    var simpleThreeCards = require('./test_data1.js').simpleThreeCards;
 
     beforeEach(function () {
         simpleFlopGameState = require('./test_data1.js').simpleFlop;
@@ -28,10 +29,18 @@ describe('Poker', function () {
     });
 
     describe('vanya2', function() {
+
         it('should return pair true', function () {
             var catergorys = vanya2(simplePairCards);
-            console.log(catergorys);
             expect(catergorys.two).to.eql(true);
+            expect(catergorys.flush).to.eql(false);
+        });
+
+        it('should return pair true', function () {
+            var catergorys = vanya2(simpleThreeCards);
+            expect(catergorys.two).to.eql(true);
+            expect(catergorys.three).to.eql(true);
+            expect(catergorys.flush).to.eql(false);
         });
 
     });
