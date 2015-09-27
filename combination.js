@@ -42,8 +42,28 @@ module.exports = {
     },
 
     checkStraight: function checkStraight(cards) {
-        if (cards.length <= 5) {
+        var normalizedCards = normalizeCards(cards);
 
+        if (cards.length <= 5) {
+            var ranks = _.pluck(normalizedCards, 'rank');
+            var sortedByRank = ranks.sort(function (a, b) {
+                return a < b;
+            });
+
+            for (var i = 1; i < sortedByRank.length; i++) {
+                if (sortedByRank[i] !== sortedByRank[i - 1] + 1) {
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
+    },
+
+    checkStraightFlush: function checkStraightFlush(cards) {
+        if (cards.length <= 5) {
+            return checkStraight(cards) && checkFlash(cards);
         } else {
             return false;
         }
@@ -65,4 +85,36 @@ function getMaxRankCount(cards) {
             return current > max ? current : max;
         }, 0
     );
+}
+
+function checkStraight(cards) {
+    var normalizedCards = normalizeCards(cards);
+
+    if (cards.length <= 5) {
+        var ranks = _.pluck(normalizedCards, 'rank');
+        var sortedByRank = ranks.sort(function (a, b) {
+            return a < b;
+        });
+
+        for (var i = 1; i < sortedByRank.length; i++) {
+            if (sortedByRank[i] !== sortedByRank[i - 1] + 1) {
+                return false;
+            }
+        }
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function checkFlash(cards) {
+    var suits = _.reduce(
+        _.values(
+            _.countBy(cards, 'suit')
+        ), function (max, current) {
+            return current > max ? current : max;
+        }, 0
+    );
+
+    return suits === 5 || suits === cards.length;
 }
