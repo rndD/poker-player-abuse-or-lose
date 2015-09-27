@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 var vanya = function(cards) {
     if (!cards ) {
         return 8;
@@ -14,5 +16,9 @@ var vanya = function(cards) {
 
     return 4;
 };
+
+function checkFlash(cards) {
+    return _.every(cards, {'suit': cards[0].suit});
+}
 
 module.exports = vanya;
