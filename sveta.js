@@ -15,7 +15,7 @@ function twoCard(hand, bet) {
         return 4;
     }
 
-    if (hand.good_kicker && bet <= 550) {
+    if (hand.good_kicker && bet <= 250) {
         return 3;
     }
 
