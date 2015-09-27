@@ -16,14 +16,14 @@ function pass() {
 
 function raise() {
     console.log('$$$RAISE')
-    var cur_bet = getMaxBetFromState();
+    var cur_bet = module.exports.getMaxBetFromState();
     return cur_bet + game_state.minimum_raise;
     //return 2000;
 }
 
 function check() {
     console.log('$$$CHECK')
-    return getMaxBetFromState();
+    return module.exports.getMaxBetFromState();
     //return 1000;
 }
 
