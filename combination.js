@@ -14,15 +14,15 @@ module.exports = {
     },
 
     checkFour: function checkFour(cards) {
-        return getMaxRankCount(cards) === 4;
+        return getMaxRankCount(cards) >= 4;
     },
 
     checkTrio: function checkTrio(cards) {
-        return getMaxRankCount(cards) === 3;
+        return getMaxRankCount(cards) >= 3;
     },
 
     checkPair: function checkPair(cards) {
-        return getMaxRankCount(cards) === 2;
+        return getMaxRankCount(cards) >= 2;
     },
 
     checkTwoPair: function checkTwoPair(cards) {
@@ -42,7 +42,11 @@ module.exports = {
     },
 
     checkStraight: function checkStraight(cards) {
+        if (cards.length <= 5) {
 
+        } else {
+            return false;
+        }
     }
 };
 
