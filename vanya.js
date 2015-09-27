@@ -1,4 +1,7 @@
 var vanya = function(cards) {
+    if (!cards ) {
+        return 8;
+    }
     // Положительный.
     // Карманные пары
     if (cards[0].rank == cards[1].rank) {
