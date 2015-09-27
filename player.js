@@ -1,4 +1,6 @@
 var vanya = require('./vanya.js');
+var vanya2 = require('./vanya2.js');
+var sveta = require('./sveta.js');
 var cards = require('./cards.js');
 var _ = require('lodash');
 
@@ -34,10 +36,15 @@ module.exports = {
   bet_request: function(game_state) {
       console.log(JSON.stringify(game_state, null, 2));
 
+  try {
       var our_cards = cards.ourCards(game_state);
       var table_cards = game_state.community_cards;
-  try {
-      switch(vanya(our_cards.concat(table_cards))) {
+      var cards = our_cards.concat(table_cards);
+
+      var card_status = vanya2(cards);
+      var action = sveta(card_status, cards.length);
+
+      switch(action) {
           case 0:
           case 1:
           case 2:
