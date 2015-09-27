@@ -73,4 +73,13 @@ module.exports.simpleFlop = { "tournament_id": "55e4be2d4adaaf0003000002",
 };
 
 
-module.exports.simpleFlop2 = {};
+module.exports.simplePairCards = [
+         {
+           "rank": "K",
+          "suit": "hearts"
+        },
+        {
+           "rank": "K",
+          "suit": "clubs"
+        }
+];
