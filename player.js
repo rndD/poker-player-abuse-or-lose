@@ -14,16 +14,16 @@ function pass() {
     return 0;
 }
 
-function raise() {
+function raise(game_state) {
     console.log('$$$RAISE')
-    var cur_bet = module.exports.getMaxBetFromState();
+    var cur_bet = module.exports.getMaxBetFromState(game_state);
     return cur_bet + game_state.minimum_raise;
     //return 2000;
 }
 
-function check() {
+function check(game_state) {
     console.log('$$$CHECK')
-    return module.exports.getMaxBetFromState();
+    return module.exports.getMaxBetFromState(game_state);
     //return 1000;
 }
 
@@ -41,22 +41,22 @@ module.exports = {
           case 0:
           case 1:
           case 2:
-              return pass();
+              return pass(game_state);
           break;
 
           case 3:
-              return check();
+              return check(game_state);
           break;
 
           case 4:
           case 5:
-              return raise();
+              return raise(game_state);
           break;
 
           case 6:
           case 7:
           case 8:
-              return all_in();
+              return all_in(game_state);
           break;
       }
   } catch(e) {
