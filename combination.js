@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 module.exports = {
     checkFlash: function checkFlash(cards) {
         var suits = _.reduce(
@@ -24,6 +26,14 @@ module.exports = {
     },
 
     checkTwoPair: function checkTwoPair(cards) {
+        var vals = _.values(
+            _.countBy(cards, 'rank')
+        );
+
+        return _.filter(vals, function (val) {return val >= 2}).length >= 2;
+    },
+
+    checkFullHouse: function checkFullHouse(cards) {
         var vals = _.values(
             _.countBy(cards, 'rank')
         );
