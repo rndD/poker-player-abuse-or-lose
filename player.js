@@ -1,3 +1,14 @@
+var vanya = require('./vanya.js');
+
+var ourCards = function(people) {
+    var cards = []
+    return people.forEach(function(player) {
+        if (player.id === 3) {
+            cards = player["hole_cards"];
+        }
+    })
+    return cards;
+}
 
 module.exports = {
 
@@ -5,6 +16,19 @@ module.exports = {
 
   bet_request: function(game_state) {
       console.log(game_state);
+      switch(vanya(ourCards(game_state.players))) {
+          case 0: 
+              return 0;
+          break;
+
+          case 4:
+              return 400;
+          break;
+
+          case 8:
+              return 1000;
+          break;
+      }
     return 1000;
   },
 
