@@ -39,12 +39,33 @@ function checkFlash(cards) {
     return suits === 5 || suits === cards.length;
 }
 
-function checkStreet(cards) {
-    var normalizedCard = normalizeCards(cards);
+function checkPoker(cards) {
+    getMaxRankCount(cards) === 4;
+}
+
+function checkTrio(cards) {
+    getMaxRankCount(cards) === 3;
+}
+
+function checkPair(cards) {
+    getMaxRankCount(cards) === 2;
 }
 
 function normalizeCards(cards) {
+    var clone = _.cloneDeep(cards);
+    return _.map(clone, function (card) {
+        card.rank = rank[card.rank]
+    })
+}
 
+function getMaxRankCount(cards) {
+    return _.reduce(
+        _.values(
+            _.countBy(cards, 'rank')
+        ), function (max, current) {
+            return current > max ? current : max;
+        }, 0
+    );
 }
 
 module.exports = vanya;
