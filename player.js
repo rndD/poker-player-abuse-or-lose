@@ -5,21 +5,25 @@ var _ = require('lodash');
 
 
 function all_in() {
+    console.log('$$$ALL_IN')
     return 5000;
 }
 
 function pass() {
+    console.log('$$$PASS')
     return 0;
 }
 
 function raise() {
-    var cur_bet = getMaxState();
+    console.log('$$$RAISE')
+    var cur_bet = getMaxBetFromState();
     return cur_bet + game_state.minimum_raise;
     //return 2000;
 }
 
 function check() {
-    return getMaxState();
+    console.log('$$$CHECK')
+    return getMaxBetFromState();
     //return 1000;
 }
 
