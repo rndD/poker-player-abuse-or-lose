@@ -6,7 +6,7 @@ var sveta = function(hand, turn) {
         case 7: return sevenCard(hand);
     }
 
-    console.log('&&SVETA ERROR');
+    console.log('&&SVETA ERROR - ', turn);
     return twoCard(hand);
 };
 

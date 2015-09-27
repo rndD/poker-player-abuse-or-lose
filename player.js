@@ -31,19 +31,23 @@ function check(game_state) {
 
 module.exports = {
 
-  VERSION: "Blef mashina 9000",
+  VERSION: "Blef mashina 1.0.0",
 
   bet_request: function(game_state) {
       console.log(JSON.stringify(game_state, null, 2));
 
   try {
-      console.log(cards);
       var our_cards = cards.ourCards(game_state);
       var table_cards = game_state.community_cards;
       var all_cards = our_cards.concat(table_cards);
 
+      if (!all_cards.length) {
+          console.log('NO CARDS')
+          return check(game_state);
+      }
+
       var card_status = vanya2(all_cards);
-      var action = sveta(card_status, cards.length);
+      var action = sveta(card_status, all_cards.length);
 
       switch(action) {
           case 0:
