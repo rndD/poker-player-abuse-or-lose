@@ -47,7 +47,8 @@ module.exports = {
       }
 
       var card_status = vanya2(all_cards);
-      var action = sveta(card_status, all_cards.length);
+      var cur_bet = module.exports.getMaxBetFromState(game_state);
+      var action = sveta(card_status, all_cards.length, cur_bet);
 
       switch(action) {
           case 0:

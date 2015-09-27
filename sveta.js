@@ -1,6 +1,6 @@
-var sveta = function(hand, turn) {
+var sveta = function(hand, turn, bet) {
     switch(turn) {
-        case 2: return twoCard(hand);
+        case 2: return twoCard(hand, bet);
         case 5: return fiveCard(hand);
         case 6: return sixCard(hand);
         case 7: return sevenCard(hand);
@@ -10,12 +10,12 @@ var sveta = function(hand, turn) {
     return twoCard(hand);
 };
 
-function twoCard(hand) {
+function twoCard(hand, bet) {
     if (hand.two) {
         return 4;
     }
 
-    if (hand.good_kicker) {
+    if (hand.good_kicker && bet <= 550) {
         return 3;
     }
 
