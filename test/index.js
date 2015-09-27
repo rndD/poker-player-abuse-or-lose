@@ -7,6 +7,7 @@ var vanya2 = require('../vanya2.js')
 describe('Poker', function () {
     var simpleFlopGameState;
     var simplePairCards;
+    var simpleSvetaError = require('./test_data1.js').simpleSvetaError;
     var simpleThreeCards = require('./test_data1.js').simpleThreeCards;
     var simpleFlushCards = require('./test_data1.js').simpleFlushCards;
 
@@ -18,6 +19,11 @@ describe('Poker', function () {
     describe('base', function () {
         it('player should', function () {
             var bet = player.bet_request(simpleFlopGameState);
+            expect(bet).to.eql(0);
+        });
+
+        it('player should sveta error', function () {
+            var bet = player.bet_request(simpleSvetaError);
             expect(bet).to.eql(0);
         });
     });
