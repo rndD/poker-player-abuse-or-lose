@@ -1,14 +1,14 @@
 var vanya = require('./vanya.js');
 
 var ourCards = function(people) {
-    var cards = []
-    return people.forEach(function(player) {
+    var cards = [];
+    people.forEach(function(player) {
         if (player.id === 3) {
             cards = player["hole_cards"];
         }
-    })
+    });
     return cards;
-}
+};
 
 module.exports = {
 
