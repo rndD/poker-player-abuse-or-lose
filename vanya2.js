@@ -8,6 +8,18 @@ var ranks = {
 };
 
 var vanya = function(cards) {
+
+    function good(cards_) {
+        var yeap = false;
+        cards_.forEach(function(card) {
+            if (ranks[card.rank]) {
+                yeap = true;
+            }
+        })
+
+        return yeap;
+    }
+
     var hand_categories = {
         "straight_flush": false,
         "four": combinations.checkFour(cards),
@@ -15,7 +27,8 @@ var vanya = function(cards) {
         "flush": combinations.checkFlash(cards),
         "straight": false,
         "three": combinations.checkTrio(cards),
-        "two": combinations.checkPair(cards)
+        "two": combinations.checkPair(cards),
+        "good_kicker": good(cards)
     };
 
     return hand_categories;
