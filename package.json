@@ -3,6 +3,10 @@
     "description": "Javascript player from lean poker. http://leanpoker.org",
     "version": "0.0.1",
     "private": true,
+    "scripts": {
+       "test": "mocha",
+       "watch": "mocha --watch"
+     },
     "devDependencies": {
         "chai": "^1.9.1",
         "mocha": "^1.18.2",
