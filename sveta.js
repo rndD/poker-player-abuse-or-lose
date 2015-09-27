@@ -19,7 +19,7 @@ function twoCard(hand, bet) {
         return 3;
     }
 
-    else return 0;
+    return 0;
 }
 
 function fiveCard(hand) {
