@@ -1,8 +1,13 @@
 {
-    "name": "poker-player-javascript",
+    "name": "Abuse Or Lose bot",
     "description": "Javascript player from lean poker. http://leanpoker.org",
     "version": "0.0.1",
     "private": true,
+    "devDependencies": {
+        "chai": "^1.9.1",
+        "mocha": "^1.18.2",
+        "sinon": "^1.10.3"
+    },
     "dependencies": {
         "express": "3.x"
     }
