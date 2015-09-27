@@ -60,9 +60,11 @@ module.exports = {
           break;
       }
   } catch(e) {
-      console.log('WTF!!!???')
+      console.log('$$$WTF$$$')
+      console.log(e)
   }
-    return check();
+    console.log('WTF!!!???')
+    return 2000;
   },
 
   showdown: function(game_state) {
