@@ -10,6 +10,22 @@ var ourCards = function(people) {
     return cards;
 };
 
+function all_in() {
+    return 5000;
+}
+
+function pass() {
+    return 0;
+}
+
+function raise() {
+    return 2000;
+}
+
+function check() {
+    return 1000;
+}
+
 module.exports = {
 
   VERSION: "0.1.0",
@@ -19,20 +35,27 @@ module.exports = {
   try {
       switch(vanya(ourCards(game_state.players))) {
           case 0:
-              return 0;
+          case 1:
+          case 2:
+              return pass();
           break;
 
+          case 3:
           case 4:
-              return 400;
+          case 5:
+              return raise();
           break;
 
+          case 6:
+          case 7:
           case 8:
-              return 1000;
+              return all_in();
           break;
       }
   } catch(e) {
+      console.log('WTF!!!???')
   }
-    return 1000;
+    return check();
   },
 
   showdown: function(game_state) {
