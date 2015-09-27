@@ -15,7 +15,7 @@ module.exports = {
   VERSION: "0.1.0",
 
   bet_request: function(game_state) {
-      console.log(JSON.stringify(game_state, 2));
+      console.log(JSON.stringify(game_state, null, 2));
   try {
       switch(vanya(ourCards(game_state.players))) {
           case 0:
