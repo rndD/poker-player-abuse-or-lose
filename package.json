@@ -1,5 +1,5 @@
 {
-    "name": "Abuse Or Lose bot",
+    "name": "AbuseOrLoseBot",
     "description": "Javascript player from lean poker. http://leanpoker.org",
     "version": "0.0.1",
     "private": true,
@@ -9,6 +9,7 @@
         "sinon": "^1.10.3"
     },
     "dependencies": {
-        "express": "3.x"
+        "express": "3.x",
+        "lodash": "*"
     }
 }
