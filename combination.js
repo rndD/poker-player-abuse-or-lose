@@ -13,15 +13,15 @@ module.exports = {
 
     checkFour: function checkFour(cards) {
         getMaxRankCount(cards) === 4;
-    }
+    },
 
     checkTrio: function checkTrio(cards) {
         getMaxRankCount(cards) === 3;
-    }
+    },
 
     checkPair: function checkPair(cards) {
         getMaxRankCount(cards) === 2;
-    }
+    },
 
     checkTwoPair: function checkTwoPair(cards) {
         var vals = _.values(
