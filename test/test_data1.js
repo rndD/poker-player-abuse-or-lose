@@ -237,3 +237,25 @@ module.exports.simpleStreetCards = [
     }
 ];
 
+module.exports.simpleStraightFlushCards = [
+    {
+        "rank": "8",
+        "suit": "hearts"
+    },
+    {
+        "rank": "9",
+        "suit": "hearts"
+    },
+    {
+        "rank": "J",
+        "suit": "hearts"
+    },
+    {
+        "rank": "10",
+        "suit": "hearts"
+    },
+    {
+        "rank": "Q",
+        "suit": "hearts"
+    }
+];

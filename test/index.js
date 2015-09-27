@@ -12,6 +12,7 @@ describe('Poker', function () {
     var simpleThreeCards = require('./test_data1.js').simpleThreeCards;
     var simpleFlushCards = require('./test_data1.js').simpleFlushCards;
     var simpleStreetCards = require('./test_data1.js').simpleStreetCards;
+    var simpleStraightFlushCards = require('./test_data1.js').simpleStraightFlushCards;
 
     beforeEach(function () {
         simpleFlopGameState = require('./test_data1.js').simpleFlop;
@@ -21,7 +22,7 @@ describe('Poker', function () {
     describe('base', function () {
         it('player should', function () {
             var bet = player.bet_request(simpleFlopGameState);
-            expect(bet).to.eql(0);
+            expect(bet).to.eql(80);
         });
 
         it('player should sveta error', function () {
@@ -45,7 +46,7 @@ describe('Poker', function () {
             expect(catergorys.flush).to.eql(false);
         });
 
-        it('should return pair true', function () {
+        it('should return three true', function () {
             var catergorys = vanya2(simpleThreeCards);
             expect(catergorys.two).to.eql(true);
             expect(catergorys.three).to.eql(true);
@@ -59,10 +60,19 @@ describe('Poker', function () {
             expect(catergorys.flush).to.eql(true);
         });
 
-        //it('should return street true', function () {
-        //    var check = combitantion.checkStraight(simpleStreetCards);
-        //    expect(check).to.eql(true);
-        //});
+        it('should return street true', function () {
+            var check = combitantion.checkStraight(simpleStreetCards);
+            var straightFlush = combitantion.checkStraight(simpleStraightFlushCards);
+            expect(check).to.eql(true);
+            expect(straightFlush).to.eql(true);
+        });
+
+        it('should return street flash true', function () {
+            var straight = combitantion.checkStraightFlush(simpleStreetCards);
+            var straightFlush = combitantion.checkStraightFlush(simpleStraightFlushCards);
+            expect(straightFlush).to.eql(true);
+            expect(straight).to.eql(false);
+        });
 
     });
 });

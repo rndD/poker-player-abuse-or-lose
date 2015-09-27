@@ -21,11 +21,11 @@ var vanya = function(cards) {
     }
 
     var hand_categories = {
-        "straight_flush": false,
+        "straight_flush": combinations.checkStraightFlush(cards),
         "four": combinations.checkFour(cards),
         "full_house": combinations.checkFullHouse(cards),
         "flush": combinations.checkFlash(cards),
-        "straight": false,
+        "straight": combinations.checkStraight(cards),
         "three": combinations.checkTrio(cards),
         "two": combinations.checkPair(cards),
         "good_kicker": good(cards)

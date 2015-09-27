@@ -53,7 +53,7 @@ module.exports = {
         if (cards.length <= 5) {
             var ranks = _.pluck(normalizedCards, 'rank');
             var sortedByRank = ranks.sort(function (a, b) {
-                return a < b;
+                return a > b;
             });
 
             for (var i = 1; i < sortedByRank.length; i++) {
@@ -100,7 +100,7 @@ function checkStraight(cards) {
     if (cards.length <= 5) {
         var ranks = _.pluck(normalizedCards, 'rank');
         var sortedByRank = ranks.sort(function (a, b) {
-            return a < b;
+            return a > b;
         });
 
         for (var i = 1; i < sortedByRank.length; i++) {
