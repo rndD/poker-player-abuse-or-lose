@@ -97,8 +97,31 @@ module.exports.simpleThreeCards = [
             "rank": "4",
             "suit": "spikes"
         },
-    {
-        "rank": "6",
-        "suit": "spikes"
-    }
+        {
+            "rank": "6",
+            "suit": "spikes"
+        }
+];
+
+module.exports.simpleFlushCards = [
+         {
+           "rank": "4",
+          "suit": "hearts"
+        },
+        {
+             "rank": "K",
+             "suit": "hearts"
+        },
+        {
+            "rank": "J",
+            "suit": "hearts"
+        },
+        {
+            "rank": "6",
+            "suit": "hearts"
+        },
+        {
+            "rank": "A",
+            "suit": "hearts"
+        }
 ];

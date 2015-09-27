@@ -8,6 +8,7 @@ describe('Poker', function () {
     var simpleFlopGameState;
     var simplePairCards;
     var simpleThreeCards = require('./test_data1.js').simpleThreeCards;
+    var simpleFlushCards = require('./test_data1.js').simpleFlushCards;
 
     beforeEach(function () {
         simpleFlopGameState = require('./test_data1.js').simpleFlop;
@@ -41,6 +42,13 @@ describe('Poker', function () {
             expect(catergorys.two).to.eql(true);
             expect(catergorys.three).to.eql(true);
             expect(catergorys.flush).to.eql(false);
+        });
+
+        it('should return flush true', function () {
+            var catergorys = vanya2(simpleFlushCards);
+            expect(catergorys.two).to.eql(false);
+            expect(catergorys.three).to.eql(false);
+            expect(catergorys.flush).to.eql(true);
         });
 
     });
