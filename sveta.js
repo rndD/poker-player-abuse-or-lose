@@ -15,6 +15,10 @@ function twoCard(hand) {
         return 4;
     }
 
+    if (hand.good_kicker) {
+        return 3;
+    }
+
     else return 0;
 }
 
