@@ -32,8 +32,11 @@ module.exports = {
 
   bet_request: function(game_state) {
       console.log(JSON.stringify(game_state, null, 2));
+
+      var our_cards = ourCards(game_state.players);
+      var table_cards = game_state.community_cards;
   try {
-      switch(vanya(ourCards(game_state.players))) {
+      switch(vanya(our_cards.concat(table_cards))) {
           case 0:
           case 1:
           case 2:
