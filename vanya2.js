@@ -11,7 +11,7 @@ var vanya = function(cards) {
     var hand_categories = {
         "straight_flush": false,
         "four": combinations.checkFour(cards),
-        "full_house": false//checkFullHouse(cards),
+        "full_house": combinations.checkFullHouse(cards),
         "flush": combinations.checkFlash(cards),
         "straight": false,
         "three": combinations.checkTrio(cards),
