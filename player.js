@@ -13,11 +13,14 @@ function pass() {
 }
 
 function raise() {
-    return 2000;
+    var cur_bet = getMaxState();
+    return cur_bet + game_state.minimum_raise;
+    //return 2000;
 }
 
 function check() {
-    return 1000;
+    return getMaxState();
+    //return 1000;
 }
 
 module.exports = {
@@ -38,6 +41,9 @@ module.exports = {
           break;
 
           case 3:
+              return check();
+          break;
+
           case 4:
           case 5:
               return raise();
