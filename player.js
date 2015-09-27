@@ -1,5 +1,6 @@
 var vanya = require('./vanya.js');
 var cards = require('./cards.js');
+var _ = require('lodash');
 
 
 
@@ -59,9 +60,9 @@ module.exports = {
   },
 
   getMaxBetFromState: function getMaxBetFromState(game_state) {
-      var players = game_state.players;
+      var bets = _.pluck(game_state.players, 'bet');
 
-      var maxBet = players.reduce(function (max, current) {
+      var maxBet = bets.reduce(function (max, current) {
           return current < max ? max : current;
       }, 0);
 
