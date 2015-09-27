@@ -17,7 +17,7 @@ describe('Poker', function () {
     describe('base', function () {
         it('player should', function () {
             var bet = player.bet_request(simpleFlopGameState);
-            expect(bet).to.eql(120);
+            expect(bet).to.eql(0);
         });
     });
 

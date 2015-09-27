@@ -37,11 +37,12 @@ module.exports = {
       console.log(JSON.stringify(game_state, null, 2));
 
   try {
+      console.log(cards);
       var our_cards = cards.ourCards(game_state);
       var table_cards = game_state.community_cards;
-      var cards = our_cards.concat(table_cards);
+      var all_cards = our_cards.concat(table_cards);
 
-      var card_status = vanya2(cards);
+      var card_status = vanya2(all_cards);
       var action = sveta(card_status, cards.length);
 
       switch(action) {
