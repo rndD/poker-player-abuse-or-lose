@@ -11,8 +11,7 @@ describe('Poker', function () {
     describe('bet', function () {
         it('getMaxBetFromState', function () {
             var bet = player.getMaxBetFromState(simpleFlopGameState);
-            console.log(bet)
-            expect(bet).to.eql(3);
+            expect(bet).to.eql(80);
         });
     });
 });
