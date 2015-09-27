@@ -213,3 +213,27 @@ module.exports.simpleFlushCards = [
             "suit": "hearts"
         }
 ];
+
+module.exports.simpleStreetCards = [
+    {
+        "rank": "8",
+        "suit": "hearts"
+    },
+    {
+        "rank": "9",
+        "suit": "spikes"
+    },
+    {
+        "rank": "J",
+        "suit": "hearts"
+    },
+    {
+        "rank": "10",
+        "suit": "hearts"
+    },
+    {
+        "rank": "Q",
+        "suit": "spikes"
+    }
+];
+

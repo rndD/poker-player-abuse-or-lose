@@ -3,6 +3,7 @@ var expect = require('chai').expect;
 var player = require('../player.js');
 var cards = require('../cards.js');
 var vanya2 = require('../vanya2.js')
+var combitantion = require('../combination.js')
 
 describe('Poker', function () {
     var simpleFlopGameState;
@@ -10,6 +11,7 @@ describe('Poker', function () {
     var simpleSvetaError = require('./test_data1.js').simpleSvetaError;
     var simpleThreeCards = require('./test_data1.js').simpleThreeCards;
     var simpleFlushCards = require('./test_data1.js').simpleFlushCards;
+    var simpleStreetCards = require('./test_data1.js').simpleStreetCards;
 
     beforeEach(function () {
         simpleFlopGameState = require('./test_data1.js').simpleFlop;
@@ -56,6 +58,11 @@ describe('Poker', function () {
             expect(catergorys.three).to.eql(false);
             expect(catergorys.flush).to.eql(true);
         });
+
+        //it('should return street true', function () {
+        //    var check = combitantion.checkStraight(simpleStreetCards);
+        //    expect(check).to.eql(true);
+        //});
 
     });
 });

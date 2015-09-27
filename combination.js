@@ -1,4 +1,10 @@
 var _ = require('lodash');
+var ranks = {
+    'J': 11,
+    'Q': 12,
+    'K': 13,
+    'A': 14
+};
 
 module.exports = {
     checkFlash: function checkFlash(cards) {
@@ -73,7 +79,8 @@ module.exports = {
 function normalizeCards(cards) {
     var clone = _.cloneDeep(cards);
     return _.map(clone, function (card) {
-        card.rank = rank[card.rank]
+        card.rank = ranks[card.rank] || Number(card.rank);
+        return card;
     })
 }
 
