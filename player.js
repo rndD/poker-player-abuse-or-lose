@@ -29,7 +29,7 @@ function check(game_state) {
 
 module.exports = {
 
-  VERSION: "0.1.0",
+  VERSION: "Blef mashina 9000",
 
   bet_request: function(game_state) {
       console.log(JSON.stringify(game_state, null, 2));
