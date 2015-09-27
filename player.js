@@ -1,14 +1,7 @@
 var vanya = require('./vanya.js');
+var cards = require('./cards.js');
 
-var ourCards = function(people) {
-    var cards = [];
-    people.forEach(function(player) {
-        if (player.id === 3) {
-            cards = player["hole_cards"];
-        }
-    });
-    return cards;
-};
+
 
 function all_in() {
     return 5000;
@@ -33,7 +26,7 @@ module.exports = {
   bet_request: function(game_state) {
       console.log(JSON.stringify(game_state, null, 2));
 
-      var our_cards = ourCards(game_state.players);
+      var our_cards = cards.ourCards(game_state);
       var table_cards = game_state.community_cards;
   try {
       switch(vanya(our_cards.concat(table_cards))) {
