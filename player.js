@@ -34,5 +34,15 @@ module.exports = {
 
   showdown: function(game_state) {
 
+  },
+
+  getMaxBetFromState: function getMaxBetFromState(game_state) {
+      var players = game_state.players;
+
+      var maxBet = players.reduce(function (max, current) {
+          return current < max ? max : current;
+      }, 0);
+
+      return maxBet;
   }
 };
